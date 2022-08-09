@@ -13,7 +13,7 @@ public class UserRegistrationServiceTest {
 	UserRegistrationService userRegistrationService = new UserRegistrationService();
 	String canadianIpAddress = "192.206.151.131";
 	String usIpAddress = "9.160.32.110";
-	String passwdErrMsg = "Password need to be greater than 8 characters, containing at least 1 number, 1 Capitalized letter, 1 special character in this set “_ # $ % .”";
+	String passwdErrMsg = "Password needs to be greater than 8 characters, containing at least 1 number, 1 Capitalized letter, 1 special character in this set “_ # $ % .”";
 	
 	@Test
 	void testCreateUserRegistration() {
