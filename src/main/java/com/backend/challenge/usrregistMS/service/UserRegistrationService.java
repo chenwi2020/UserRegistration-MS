@@ -19,7 +19,7 @@ public class UserRegistrationService {
 	String city = "";
 	@Value( "${max_uuid}" )
 	private String max_uuid;
-	String passwdErrMsg = "Password need to be greater than 8 characters, containing at least 1 number, 1 Capitalized letter, 1 special character in this set “_ # $ % .”";
+	String passwdErrMsg = "Password needs to be greater than 8 characters, containing at least 1 number, 1 Capitalized letter, 1 special character in this set “_ # $ % .”";
 
 	// create user registration
     public Map<String, String> createUserRegistration(UserCredential userCredential) {
@@ -60,8 +60,8 @@ public class UserRegistrationService {
     			}
     		}
     		catch (Exception e) {
-    			System.out.println("Unable to get geo location data");
-				responseMsg.put("message", "Unable to get geo location data. Please try later.");
+    			System.out.println("Unable to get geolocation data");
+				responseMsg.put("message", "Unable to get geolocation data. Please try later.");
 				responseMsg.put("uuid", Integer.toString(0));
 				return responseMsg;
     		}

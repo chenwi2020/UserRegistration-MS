@@ -5,12 +5,12 @@ User registration simulation MS
 A successful response message would be similar to "Welcome user1 from the city of Concord"
 
 The following error messages could be displayed:
-* Password need to be greater than 8 characters, containing at least 1 number, 1 Capitalized letter, 1 special character in this set “_ # $ % .”
+* Password needs to be greater than 8 characters, containing at least 1 number, 1 Capitalized letter, 1 special character in this set “_ # $ % .”
 * userName is required
 * password is required
 * ipAddress is required
 * User is not eligible to register NOTE: Need to use Canadian IP address e.g. 192.206.151.131
-* Unable to get geo location data. Please try later.
+* Unable to get geolocation data. Please try later.
 
 ### UUID response values
 * The uuid value is "0" for any error response
