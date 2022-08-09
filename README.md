@@ -10,6 +10,7 @@ The following error messages could be displayed:
 * password is required
 * ipAddress is required
 * User is not eligible to register NOTE: Need to use Canadian IP address e.g. 192.206.151.131
+* Unable to get geo location data. Please try later.
 
 ### UUID response values
 * The uuid value is "0" for any error response

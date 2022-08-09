@@ -50,12 +50,20 @@ public class UserRegistrationService {
         	return responseMsg;
     	}
     	else {
-    		getGeoLocation(userCredential.getIpAddress());
-    		if (!isCountryCanada) {
-    			System.out.println("IP address is not in Canada");
-    			responseMsg.put("message", "User is not eligible to register");
-    			responseMsg.put("uuid", Integer.toString(0));
-    			return responseMsg;
+    		try {
+    			getGeoLocation(userCredential.getIpAddress());
+    			if (!isCountryCanada) {
+    				System.out.println("IP address is not in Canada");
+    				responseMsg.put("message", "User is not eligible to register");
+    				responseMsg.put("uuid", Integer.toString(0));
+    				return responseMsg;
+    			}
+    		}
+    		catch (Exception e) {
+    			System.out.println("Unable to get geo location data");
+				responseMsg.put("message", "Unable to get geo location data. Please try later.");
+				responseMsg.put("uuid", Integer.toString(0));
+				return responseMsg;
     		}
   
     		responseMsg.put("message", "Welcome " + userCredential.getUserName() + " from the city of " + city);
@@ -95,7 +103,7 @@ public class UserRegistrationService {
     	return validPassword;
     }
     
-    private void getGeoLocation(String ipAddress) {
+    private void getGeoLocation(String ipAddress) throws Exception {
     	String url = "http://ip-api.com/json/" + ipAddress;
     	// Toronto Canadian IP address
     	//String url = "http://ip-api.com/json/192.206.151.131";
